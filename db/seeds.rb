@@ -6,8 +6,9 @@ games = Game.create([
         home_team: "Paint Valley",
         visiting_team: "Adena",
         max_capacity: "1000",
-        event_date: DateTime.new(2020, 9, 1),
-        price: 500,
+        event_date: Date.new(2020, 9, 1),
+        event_time: Time.now,
+        price: 500
     },
 
     {
@@ -18,7 +19,8 @@ games = Game.create([
         visiting_team: "Unioto",
         max_capacity: "1000",
         event_date: DateTime.new(2020, 9, 8),
-        price: 500,
+        event_time: Time.now,
+        price: 500
     },
     {
         sport: "Volleyball",
@@ -28,7 +30,8 @@ games = Game.create([
         visiting_team: "Piketon",
         max_capacity: "270",
         event_date: DateTime.new(2020, 9, 5),
-        price: 700,
+        event_time: Time.now,
+        price: 700
     }
 ])
 
