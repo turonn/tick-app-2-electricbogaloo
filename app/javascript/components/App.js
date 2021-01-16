@@ -1,9 +1,9 @@
 import React from 'react'
 
-function App() {
-    return <div>hello</div>
+const App = () => {
+    return(
+        <div>Hello from ReactApp</div>
+    )
 }
 
-const Testx = (props) => (
-    <div>Hello {props.name}!</div>
-  )
+export default App
