@@ -9,3 +9,9 @@
     </ul>
     <% end %>
  </ul>
+
+ <div id='game-card'>
+    <div id="matchup">
+        <h3><%= `#{@games.as_json.first.home_team} vs #{@games.as_json.first.visiting_team}` %></h3>
+    </div>
+ </div>
