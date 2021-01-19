@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const GameCard = () => {
+    const [games, setGames] = useState(['test']);
+
+    useEffect( () => {
+        fetch('/games') //how to call our Games database
+        .then((resp) => resp.json())
+        .then((json) => setGames(json));
+      },[])
+
     return(
         <div>
-            <h3>Home Team vs Visiting Team</h3>
-            <h2>gender, level, sport</h2>
-            <p>@location</p>
-            <p>date</p>
+            <p>{games}</p>
         </div>
     )
 }
