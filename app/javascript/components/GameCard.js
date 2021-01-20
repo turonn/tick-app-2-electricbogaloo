@@ -4,14 +4,22 @@ const GameCard = () => {
     const [games, setGames] = useState(['test']);
 
     useEffect( () => {
-        fetch('/games') //how to call our Games database
-        .then((resp) => resp.json())
-        .then((json) => setGames(json));
+        fetch('/games.json') //how to call our Games database
+        .then((resp) => {
+            return resp.json()
+        })
+        .then((data) => {
+            const results = data.map((pokemon, idx) => {
+                return {...pokemon, idx: idx + 1 };
+              });
+              setGames({...data});
+        
+        })
       },[])
 
     return(
         <div>
-            <p>{games}</p>
+            <p>{games[0].home_team}</p>
         </div>
     )
 }

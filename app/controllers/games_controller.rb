@@ -12,7 +12,11 @@ class GamesController < ApplicationController
     end
 
     def index
-        @games = Game.all
+        @games = Game.all #Need to add autherization to POST...eventually
+        respond_to do |format|
+            format.html { render :index }
+            format.json { render json: @games, status: 200}
+        end
     end
 
     def create

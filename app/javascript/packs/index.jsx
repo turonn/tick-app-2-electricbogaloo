@@ -4,15 +4,19 @@ import App from '../components/App'
 import GameCard from '../components/GameCard'
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('app'),
-  )
-})
+  const app =  document.getElementById('app')
+  if (app) {
+    ReactDOM.render(
+      <App />,
+      app,
+    )
+  }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <GameCard />,
-    document.getElementById('game-card'),
-  )
+  const game_card = document.getElementById('game-card')
+  if (game_card) {
+    ReactDOM.render(
+      <GameCard />,
+      game_card,
+    )
+  }
 })
