@@ -9,8 +9,8 @@ const GameCard = () => {
             return resp.json()
         })
         .then((data) => {
-            const results = data.map((pokemon, idx) => {
-                return {...pokemon, idx: idx + 1 };
+            const results = data.map((games, idx) => { //check this tomorrow
+                return {...games, idx: idx + 1 };
               });
               setGames({...data});
         
