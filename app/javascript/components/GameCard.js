@@ -7,13 +7,16 @@ const GameCard = () => {
         fetch('/games.json') 
         .then((resp) => resp.json())
         .then((data) => setGames({...data}))
-      },[games])
+      },[])
 
     return(
         <div>
             <p>{games[0].visiting_team}</p>
+
         </div>
     )
 }
 
 export default GameCard
+
+
