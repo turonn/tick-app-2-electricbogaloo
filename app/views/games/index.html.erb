@@ -1,4 +1,6 @@
 <p>This is the games index</p>
+<%
+=begin%>
 <ul>
     <% @games.each do |game| %>
     <li><%= game.id %></li>
@@ -9,7 +11,7 @@
     </ul>
     <% end %>
  </ul>
+<%
+=end%>
 
-
-<div id='game-card'></div> <%#Why is this not rendering? %>
-<div id='outlinedCard'></div>
+<div id='game-card'></div>
