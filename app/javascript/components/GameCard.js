@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+  },
+  gameTitle: {
+    fontSize: "2rem",
+    padding: theme.spacing(0),
+    textAlign: "center",
+    color: theme.palette.text.secondary
   },
   calendarTop: {
     backgroundColor: "orange", 
@@ -48,35 +54,34 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const GameCard = () => {
-  const [games, setGames] = useState([]);
+function sayMonth(month) {
+    let months = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    return months[`${month-1}`]
+};
+
+const GameCard = (props) => {
   const classes = useStyles();
 
-  useEffect( () => {
-    fetch('/games.json') 
-    .then((resp) => resp.json())
-    .then((data) => setGames({...data}))
-  },[])
-
   return (
+    <div>
     <div className={classes.root}>
       <Container className={classes.containerStyle} maxWidth="sm">
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <img src="logos/Paint_Valley.jpg" alt="logo" />
-            <Typography className={classes.paper}>Paint Valley</Typography>
+            <Typography className={classes.paper}>{props.attributes.home_team}</Typography>
           </Grid>
           <Grid item xs={6}>
             <img src="logos/Adena.png" alt="logo" />
-            <Typography className={classes.paper}>Adena</Typography>
+            <Typography className={classes.paper}>{props.attributes.visiting_team}</Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography className={classes.paper}>Girls Middle School Basketball</Typography>
+            <Typography className={classes.gameTitle}>{props.attributes.gender} {props.attributes.level} {props.attributes.sport}</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography className={classes.paper}>
               <Icon>room</Icon>
-              Paint Valley High School
+              {props.attributes.location}
             </Typography>
             <Paper className={classes.paper}>
               <Typography>Details or advertisement here</Typography>
@@ -86,11 +91,11 @@ const GameCard = () => {
             <Card>
                 <CardContent className={classes.calendarCard}>
                     <div className={classes.calendarTop}>
-                        <Typography className={classes.month}>September</Typography>
-                        <Typography className={classes.calendarBottom}>20</Typography>
+                        <Typography className={classes.month}>{sayMonth(props.attributes.event_date.split('-')[1])}</Typography>
+                        <Typography className={classes.calendarBottom}>{props.attributes.event_date.split('-')[2]}</Typography>
                     </div>
-                    <Typography>Saturday</Typography>
-                    <Typography>7:00pm</Typography>
+                    <Typography>{props.attributes.event_date}(day of week)</Typography>
+                    <Typography>{props.attributes.event_time}</Typography>
                 </CardContent>
             </Card>
           </Grid>
@@ -101,6 +106,8 @@ const GameCard = () => {
           </Grid>
         </Grid>
       </Container>
+    </div>
+    <p/>
     </div>
   );
 };

@@ -6,6 +6,7 @@ games = Game.create([
         home_team: "Paint Valley",
         visiting_team: "Adena",
         max_capacity: "1000",
+        location: "Paint Valley High School",
         event_date: Date.new(2020, 9, 1),
         event_time: Time.now,
         price: 500
@@ -15,9 +16,10 @@ games = Game.create([
         sport: "Football",
         gender: "boys",
         level: "Varsity",
-        home_team: "Paint Valley",
+        home_team: "Paint Valley High School",
         visiting_team: "Unioto",
         max_capacity: "1000",
+        location: "Paint Valley",
         event_date: DateTime.new(2020, 9, 8),
         event_time: Time.now,
         price: 500
@@ -26,9 +28,10 @@ games = Game.create([
         sport: "Volleyball",
         gender: "girls",
         level: "JV",
-        home_team: "Paint Valley",
+        home_team: "Paint Valley Middle School",
         visiting_team: "Piketon",
         max_capacity: "270",
+        location: "Paint Valley",
         event_date: DateTime.new(2020, 9, 5),
         event_time: Time.now,
         price: 700

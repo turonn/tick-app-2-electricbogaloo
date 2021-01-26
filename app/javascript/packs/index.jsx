@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
-import GameCard from '../components/GameCard'
+import Fetch from '../components/Fetch'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app =  document.getElementById('app')
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const game_card = document.getElementById('game-card')
   if (game_card) {
     ReactDOM.render(
-      <GameCard />,
+      <Fetch />,
       game_card,
     )
   }
