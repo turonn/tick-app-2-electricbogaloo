@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
 import Fetch from '../components/Fetch'
+import BottomBar from '../components/BottomBar'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app =  document.getElementById('app')
@@ -17,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(
       <Fetch />,
       game_card,
+    )
+  }
+
+  const bottombar = document.getElementById('bottom-bar')
+  if (bottombar) {
+    ReactDOM.render(
+      <BottomBar />,
+      bottombar,
     )
   }
 })

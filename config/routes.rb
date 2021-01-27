@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :games, except: [:delete]
   resources :tickets, only: [:show, :index]
   resources :users, except: [:delete]
+  resources :cart, except: [:delete]
 end

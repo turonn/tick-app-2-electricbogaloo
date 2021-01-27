@@ -68,11 +68,11 @@ const GameCard = (props) => {
       <Container className={classes.containerStyle} maxWidth="sm">
         <Grid container spacing={3}>
           <Grid item xs={6}>
-            <img src="logos/Paint_Valley.jpg" alt="logo" />
+            <img src='logos/Paint_Valley.jpg' alt="logo" />
             <Typography className={classes.paper}>{props.attributes.home_team}</Typography>
           </Grid>
           <Grid item xs={6}>
-            <img src="logos/Adena.png" alt="logo" />
+            <img src="/assets/images/logos/Adena.png" alt="logo" />
             <Typography className={classes.paper}>{props.attributes.visiting_team}</Typography>
           </Grid>
           <Grid item xs={12}>
@@ -100,7 +100,7 @@ const GameCard = (props) => {
             </Card>
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" href='/cart' color="primary">
               GET TICKETS
             </Button>
           </Grid>

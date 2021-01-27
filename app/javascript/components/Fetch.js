@@ -20,7 +20,9 @@ const Fetch = () => {
                   />
               )
           })
-      };
+      } else {
+          gameList = <div style={{textAlign: 'center', fontSize: '1.5rem'}}>No upcoming games.</div>
+      }
       return(
           <div>{gameList}</div>
       );
