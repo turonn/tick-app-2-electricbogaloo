@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import Link from '@material-ui/core/Link'
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PersonIcon from '@material-ui/icons/Person';
@@ -30,7 +29,7 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Games" to="/" icon={<SportsBasketballIcon />} />
+      <BottomNavigationAction label="Games" icon={<SportsBasketballIcon />} />
       <BottomNavigationAction label="Cart" icon={<ShoppingCartIcon />} />
       <BottomNavigationAction label="My Account" icon={<PersonIcon />} />
     </BottomNavigation>
