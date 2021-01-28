@@ -59,6 +59,10 @@ function sayMonth(month) {
     return months[`${month-1}`]
 };
 
+const addToCart = (gid) => {
+    console.log(`added ${gid} to cart`)
+};
+
 const GameCard = (props) => {
   const classes = useStyles();
 
@@ -100,8 +104,8 @@ const GameCard = (props) => {
             </Card>
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" href='/cart' color="primary">
-              GET TICKETS
+            <Button variant="contained" onClick={() => { console.log(`added ${props.attributes.id} to cart`); }} color="primary">
+              GET TICKETS {props.attributes.id}
             </Button>
           </Grid>
         </Grid>
