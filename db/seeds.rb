@@ -1,7 +1,7 @@
 games = Game.create([
     {
         sport: "Football",
-        gender: "boys",
+        gender: "Boys",
         level: "Varsity",
         home_team: "Paint Valley",
         visiting_team: "Adena",
@@ -14,7 +14,7 @@ games = Game.create([
 
     {
         sport: "Football",
-        gender: "boys",
+        gender: "Boys",
         level: "Varsity",
         home_team: "Paint Valley High School",
         visiting_team: "Unioto",
@@ -26,12 +26,12 @@ games = Game.create([
     },
     {
         sport: "Volleyball",
-        gender: "girls",
+        gender: "Girls",
         level: "JV",
-        home_team: "Paint Valley Middle School",
+        home_team: "Paint Valley",
         visiting_team: "Piketon",
         max_capacity: "270",
-        location: "Paint Valley",
+        location: "Paint Valley Middle School",
         event_date: DateTime.new(2020, 9, 5),
         event_time: Time.now,
         price: 700
@@ -67,5 +67,26 @@ tickets = Ticket.create([
         game: games.first,
         user: users.second,
         used: false
+    }
+])
+
+schools = School.create([
+    {
+      school_name: 'Paint Valley',
+      mascot: 'Bearcats',
+      school_address: '7454 US Rt 50, Bainbridge, OH 45612',
+      logo_location: '/logos/Paint_Valley.jpg'
+    },
+    {
+        school_name: 'Adena',
+        mascot: 'Warriors',
+        school_address: '3367 Co Rd 550, Frankfort, OH 45628',
+        logo_location: '/logos/Adena.png'
+    },
+    {
+        school_name: 'Piketon',
+        mascot: 'Readstreaks',
+        school_address: '1414 Piketon Rd, Piketon, OH 45661',
+        logo_location: '/logos/Piketon.png'
     }
 ])
