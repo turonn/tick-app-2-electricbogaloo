@@ -105,7 +105,7 @@ const GameCard = (props) => {
           </Grid>
           <Grid item xs={12}>
             <Button variant="contained" onClick={() => { console.log(`added ${props.attributes.id} to cart`); }} color="primary">
-              GET TICKETS {props.attributes.id}
+              GET TICKETS {props.attributes.id} 
             </Button>
           </Grid>
         </Grid>
