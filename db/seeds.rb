@@ -45,7 +45,10 @@ users = User.create([
         email: "my@email.com",
         password: "password1",
         created_at: DateTime.new(2021,1,7),
-        updated_at: DateTime.new(2021,1,7)
+        updated_at: DateTime.new(2021,1,7),
+        confirmation_token: 'xyz321',
+        confirmed_at: DateTime.new(2021,1,10),
+        confirmation_sent_at: DateTime.new(2021,1,9)
     },
     {
         first_name: "Jeorge",
@@ -53,7 +56,10 @@ users = User.create([
         email: "jeo@email.com",
         password: "pas3wrid",
         created_at: DateTime.new(2021,1,7),
-        updated_at: DateTime.new(2021,1,7)
+        updated_at: DateTime.new(2021,1,7),
+        confirmation_token: 'abc123',
+        confirmed_at: DateTime.new(2021,1,10),
+        confirmation_sent_at: DateTime.new(2021,1,9)
     }
 ])
 

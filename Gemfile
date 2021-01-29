@@ -24,6 +24,12 @@ gem 'jbuilder', '~> 2.7'
 #Adds Devise https://github.com/heartcombo/devise
 gem 'devise'
 
+#Creates admin functionality https://github.com/sferik/rails_admin
+gem 'rails_admin', '~> 2.0'
+
+#added different permissions for different users https://github.com/CanCanCommunity/cancancan
+gem 'cancancan'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

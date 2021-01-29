@@ -72,7 +72,7 @@ const GameCard = (props) => {
       <Container className={classes.containerStyle} maxWidth="sm">
         <Grid container spacing={3}>
           <Grid item xs={6}>
-            <img src='logos/Paint_Valley.jpg' alt="logo" />
+            <img src='/logos/Paint_Valley.jpg' alt="logo" />
             <Typography className={classes.paper}>{props.attributes.home_team}</Typography>
           </Grid>
           <Grid item xs={6}>
