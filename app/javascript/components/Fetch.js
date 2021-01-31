@@ -10,21 +10,21 @@ const Fetch = () => {
       .then((data) => setGames([...data]))
     },[]);
   
-      let gameList = []
-      if (games[0]) {
-          gameList = games.map((game) => {
-              return (
-                  <GameCard
-                      key={game.id}
-                      attributes={game}
-                  />
-              )
-          })
-      } else {
-          gameList = <div style={{textAlign: 'center', fontSize: '1.5rem'}}>No upcoming games.</div>
-      }
-      return(
-          <div>{gameList}</div>
-      );
+    let gameList = []
+    if (games[0]) {
+        gameList = games.map((game) => {
+            return (
+                <GameCard
+                    key={game.id}
+                    attributes={game}
+                />
+            )
+        })
+    } else {
+        gameList = <div style={{textAlign: 'center', fontSize: '1.5rem'}}>No upcoming games.</div>
+    }
+    return(
+        <div>{gameList}</div>
+    );
 }
 export default Fetch

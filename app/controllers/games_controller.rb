@@ -57,6 +57,18 @@ class GamesController < ApplicationController
         end
     end
 
+    def add_to_cart
+        id = params[:id].to_i
+        session[:cart] << id
+        redirect_to cart_path
+    end
+
+    def remove_from_cart
+        id = params[:id].to_i
+        session[:cart].delete(id)
+        redirect_to cart_path
+    end
+
     private
 
     def  set_game
@@ -67,15 +79,4 @@ class GamesController < ApplicationController
         params.require(:game).permit(:sport, :gender, :level, :home_team, :visiting_team, :location, :max_capacity, :event_date, :event_time, :price)
     end
 
-    def add_to_cart
-        id = params[:id].to_i
-        session[:cart] << id
-        redirect_to games_path
-    end
-
-    def remove_from_cart
-        id = params[:id].to_i
-        session[:cart].delete(id)
-        redirect_to games_path
-    end
 end

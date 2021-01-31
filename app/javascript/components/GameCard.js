@@ -59,8 +59,12 @@ function sayMonth(month) {
     return months[`${month-1}`]
 };
 
+const csrfToken = document.querySelector("[name='csrf-token']").content
+
 const addToCart = (gid) => {
-    console.log(`added ${gid} to cart`)
+    fetch(`/games/${gid}/add_to_cart`, { method: 'POST', headers: { "X-CSRF-Token": csrfToken }})
+    //then if we get a response route to cart
+    //else nothing
 };
 
 const GameCard = (props) => {
@@ -104,7 +108,7 @@ const GameCard = (props) => {
             </Card>
           </Grid>
           <Grid item xs={12}>
-            <Button variant="contained" onClick={() => { console.log(`added ${props.attributes.id} to cart`); }} color="primary">
+            <Button variant="contained" onClick={() => { addToCart(props.attributes.id) }} color="primary">
               GET TICKETS {props.attributes.id} 
             </Button>
           </Grid>

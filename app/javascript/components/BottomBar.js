@@ -30,7 +30,7 @@ const BottomBar = () => {
       className={classes.root}
     >
       <BottomNavigationAction label="Games" icon={<SportsBasketballIcon />} />
-      <BottomNavigationAction label="Cart" icon={<ShoppingCartIcon />} />
+      <BottomNavigationAction href='/cart' label="Cart" icon={<ShoppingCartIcon />} />
       <BottomNavigationAction label="My Account" icon={<PersonIcon />} />
     </BottomNavigation>
   );

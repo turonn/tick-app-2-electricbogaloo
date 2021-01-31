@@ -1,5 +1,6 @@
 <p>This is the games index</p>
 <%= debug session[:cart]%>
+<p><%= link_to 'add to cart', add_to_cart_game_path(7), method: :post %></p>
 <%
 =begin%>
 <ul>
