@@ -29,9 +29,9 @@ const BottomBar = () => {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction label="Games" icon={<SportsBasketballIcon />} />
+      <BottomNavigationAction href='/games' label="Games" icon={<SportsBasketballIcon />} />
       <BottomNavigationAction href='/cart' label="Cart" icon={<ShoppingCartIcon />} />
-      <BottomNavigationAction label="My Account" icon={<PersonIcon />} />
+      <BottomNavigationAction href='/users' label="My Account" icon={<PersonIcon />} />
     </BottomNavigation>
   );
 }

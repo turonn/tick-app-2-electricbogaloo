@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
-import Fetch from '../components/Fetch'
+import FetchGames from '../components/FetchGames'
 import BottomBar from '../components/BottomBar'
+import FetchCart from '../components/FetchCart'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app =  document.getElementById('app')
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const game_card = document.getElementById('game-card')
   if (game_card) {
     ReactDOM.render(
-      <Fetch />,
+      <FetchGames />,
       game_card,
     )
   }
@@ -26,6 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(
       <BottomBar />,
       bottombar,
+    )
+  }
+
+  const cartcard = document.getElementById('cart-card')
+  if (cartcard) {
+    ReactDOM.render(
+      <FetchCart />,
+      cartcard,
     )
   }
 })

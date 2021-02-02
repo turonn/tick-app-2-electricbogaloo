@@ -1,19 +1,6 @@
 <p>This is the games index</p>
 <%= debug session[:cart]%>
+
 <p><%= link_to 'add to cart', add_to_cart_game_path(7), method: :post %></p>
-<%
-=begin%>
-<ul>
-    <% @games.each do |game| %>
-    <li><%= game.id %></li>
-    <ul>
-    <% game.as_json.each do |key, value| %>
-        <li><%= "#{key}, #{value}" %></li>
-        <% end %>
-    </ul>
-    <% end %>
- </ul>
-<%
-=end%>
 
 <div id='game-card'></div>

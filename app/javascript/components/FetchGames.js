@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import GameCard from './GameCard'
 
-const Fetch = () => {
+const FetchGames = () => {
     const [games, setGames] = useState([]);
   
     useEffect( () => {
@@ -27,4 +27,4 @@ const Fetch = () => {
         <div>{gameList}</div>
     );
 }
-export default Fetch
+export default FetchGames
