@@ -12,10 +12,10 @@ class GamesController < ApplicationController
     end
 
     def index
-        @games = Game.all #Need to add autherization to POST...eventually
+        @games = Game.all.joins(:home_team, :visiting_team) #Need to add autherization to POST...eventually
         respond_to do |format|
             format.html { render :index }
-            format.json { render json: @games, status: 200}
+            format.json { render json: @games, include: [ :home_team, :visiting_team ], status: 200}
         end
     end
 

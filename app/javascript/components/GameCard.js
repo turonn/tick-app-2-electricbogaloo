@@ -77,11 +77,11 @@ const GameCard = (props) => {
         <Grid container spacing={3}>
           <Grid item xs={6}>
             <img src='/logos/Paint_Valley.jpg' alt="logo" />
-            <Typography className={classes.paper}>{props.attributes.home_team}</Typography>
+            <Typography className={classes.paper}>{props.attributes.home_team.name}</Typography>
           </Grid>
           <Grid item xs={6}>
             <img src="/assets/images/logos/Adena.png" alt="logo" />
-            <Typography className={classes.paper}>{props.attributes.visiting_team}</Typography>
+            <Typography className={classes.paper}>{props.attributes.visiting_team.name}</Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography className={classes.gameTitle}>{props.attributes.gender} {props.attributes.level} {props.attributes.sport}</Typography>
@@ -99,11 +99,11 @@ const GameCard = (props) => {
             <Card>
                 <CardContent className={classes.calendarCard}>
                     <div className={classes.calendarTop}>
-                        <Typography className={classes.month}>{sayMonth(props.attributes.event_date.split('-')[1])}</Typography>
-                        <Typography className={classes.calendarBottom}>{props.attributes.event_date.split('-')[2]}</Typography>
+                        <Typography className={classes.month}>{sayMonth(props.attributes.event_start.split('-')[1])}</Typography>
+                        <Typography className={classes.calendarBottom}>{props.attributes.event_start.split('T')[0].split('-')[2]}</Typography>
                     </div>
-                    <Typography>{props.attributes.event_date}(day of week)</Typography>
-                    <Typography>{props.attributes.event_time}</Typography>
+                    <Typography>{props.attributes.event_start}(day of week)</Typography>
+                    <Typography>{props.attributes.event_start}</Typography>
                 </CardContent>
             </Card>
           </Grid>

@@ -19,19 +19,25 @@ ActiveRecord::Schema.define(version: 2021_01_29_204202) do
     t.string "sport"
     t.string "gender"
     t.string "level"
-    t.string "home_team"
-    t.string "visiting_team"
+    t.bigint "home_team_id", null: false
+    t.bigint "visiting_team_id", null: false
     t.string "location"
     t.integer "max_capacity"
-    t.date "event_date"
-    t.time "event_time"
+    t.datetime "event_start"
     t.integer "price"
+    t.index ["home_team_id"], name: "index_games_on_home_team_id"
+    t.index ["visiting_team_id"], name: "index_games_on_visiting_team_id"
   end
 
   create_table "schools", force: :cascade do |t|
-    t.string "school_name"
+    t.string "name"
     t.string "mascot"
-    t.string "school_address"
+    t.string "address1"
+    t.string "address2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "phone"
     t.string "logo_location"
   end
 
@@ -66,4 +72,6 @@ ActiveRecord::Schema.define(version: 2021_01_29_204202) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "games", "schools", column: "home_team_id"
+  add_foreign_key "games", "schools", column: "visiting_team_id"
 end

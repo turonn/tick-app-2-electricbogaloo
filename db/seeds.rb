@@ -1,14 +1,43 @@
+schools = School.create([
+    {
+      name: 'Paint Valley',
+      mascot: 'Bearcats',
+      address1: '7454 US Rt 50', 
+      city: 'Bainbridge', 
+      state: 'OH',
+      zip: '45612',
+      logo_location: '/logos/Paint_Valley.jpg'
+    },
+    {
+        name: 'Adena',
+        mascot: 'Warriors',
+        address1: '3367 Co Rd 550',
+        city: 'Frankfort',
+        state: 'OH',
+        zip: '45628',
+        logo_location: '/logos/Adena.png'
+    },
+    {
+        name: 'Piketon',
+        mascot: 'Redstreaks',
+        address1: '1414 Piketon Rd',
+        city: 'Piketon',
+        state: 'OH',
+        zip: '45661',
+        logo_location: '/logos/Piketon.png'
+    }
+])
+
 games = Game.create([
     {
         sport: "Football",
         gender: "Boys",
         level: "Varsity",
-        home_team: "Paint Valley",
-        visiting_team: "Adena",
+        home_team_id: 1,
+        visiting_team_id: 2,
         max_capacity: "1000",
         location: "Paint Valley High School",
-        event_date: Date.new(2020, 9, 1),
-        event_time: Time.now,
+        event_start: DateTime.new(2020, 9, 1, 19, 30),
         price: 500
     },
 
@@ -16,24 +45,22 @@ games = Game.create([
         sport: "Football",
         gender: "Boys",
         level: "Varsity",
-        home_team: "Paint Valley High School",
-        visiting_team: "Unioto",
+        home_team_id: 1,
+        visiting_team_id: 3,
         max_capacity: "1000",
-        location: "Paint Valley",
-        event_date: DateTime.new(2020, 9, 8),
-        event_time: Time.now,
+        location: "Paint Valley High School",
+        event_start: DateTime.new(2020, 9, 8, 15, 15),
         price: 500
     },
     {
         sport: "Volleyball",
         gender: "Girls",
         level: "JV",
-        home_team: "Paint Valley",
-        visiting_team: "Piketon",
+        home_team_id: 1,
+        visiting_team_id: 2,
         max_capacity: "270",
         location: "Paint Valley Middle School",
-        event_date: DateTime.new(2020, 9, 5),
-        event_time: Time.now,
+        event_start: DateTime.new(2020, 9, 5, 8, 45),
         price: 700
     }
 ])
@@ -73,26 +100,5 @@ tickets = Ticket.create([
         game: games.first,
         user: users.second,
         used: false
-    }
-])
-
-schools = School.create([
-    {
-      school_name: 'Paint Valley',
-      mascot: 'Bearcats',
-      school_address: '7454 US Rt 50, Bainbridge, OH 45612',
-      logo_location: '/logos/Paint_Valley.jpg'
-    },
-    {
-        school_name: 'Adena',
-        mascot: 'Warriors',
-        school_address: '3367 Co Rd 550, Frankfort, OH 45628',
-        logo_location: '/logos/Adena.png'
-    },
-    {
-        school_name: 'Piketon',
-        mascot: 'Readstreaks',
-        school_address: '1414 Piketon Rd, Piketon, OH 45661',
-        logo_location: '/logos/Piketon.png'
     }
 ])
