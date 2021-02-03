@@ -73,7 +73,9 @@ const CartCard = (props) => {
   return (
     <div className={classes.root}>
       <Container className={classes.containerStyle} maxWidth="sm">
-        <div>{props.attributes.id} is in the cart</div>
+        <Grid container spacing={3}>
+          <div>{props.attributes.id} is in the cart</div>
+        </Grid>
       </Container>
       <p />
     </div>
